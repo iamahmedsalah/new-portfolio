@@ -18,11 +18,13 @@ const audiowide = Audiowide({
 // Components
 import Navbar from './Navbar';
 import Header from './Header';
+import Preloader from './Preloader';
 const Layouts = ({children}) => {
     return (
         <div>
             <Navbar />
             <Header />
+            <Preloader />
                 {children}
         </div>
         

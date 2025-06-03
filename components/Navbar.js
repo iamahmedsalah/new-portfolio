@@ -40,7 +40,7 @@ const Navbar = () => {
                             scale: 1.1,
                             transition: { duration: 0.2 },
                         }}>
-                        <Link className={`${link.path === pathname && 'text-accent'}  
+                        <Link className={`${link.path === pathname && 'text-amber-500'}  
         relative flex items-center group hover:text-amber-500 transition`}
                             href={link.path}>
                             {/* tooltip */}
