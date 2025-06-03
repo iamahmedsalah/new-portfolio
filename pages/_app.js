@@ -42,7 +42,6 @@ export default function App({ Component, pageProps }) {
         <link rel="manifest" href="/site.webmanifest" />
         <title>{metadata.title}</title>
         <meta name="theme-color" content="#731e1c" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#2a2e37" media="(prefers-color-scheme: dark)" />
         <meta name="description" content={metadata.description} />
         <meta property="og:type" content={metadata.type} />
         <meta property="og:site_name" content={metadata.siteName} />
