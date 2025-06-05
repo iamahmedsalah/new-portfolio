@@ -37,7 +37,7 @@ const Navbar = () => {
                         key={index}
                         variants={staggerContainer}
                         whileHover={{
-                            scale: 1.1,
+                            scale: 1.2,
                             transition: { duration: 0.2 },
                         }}>
                         <Link className={`${link.path === pathname && 'text-amber-500'}  

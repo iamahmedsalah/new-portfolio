@@ -20,6 +20,8 @@ import {
 } from "react-icons/si";
 
 
+import Iconmition from '@/components/Iconmition';
+
 // Skills Data
 const skillsData = [
   {
@@ -86,7 +88,7 @@ const skillsData = [
 const Skills = () => {
   return (
     <div>
-      Skills
+      <Iconmition />
     </div>
   );
 };

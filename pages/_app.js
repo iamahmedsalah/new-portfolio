@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }) {
   };
   
   return (
-    <div className={`${josefinSans.variable} ${audiowide.variable}`}>
+    <div className={`${audiowide.className}`}>
       <Head>
         {/* Favicon and Icons */}
         <link rel="icon" href="/favicon.ico" />

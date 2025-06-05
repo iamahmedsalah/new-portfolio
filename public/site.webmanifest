@@ -1,11 +1,18 @@
 {
+    "display": "standalone",
+    "start_url": "/",
+    "scope": "/",
+    "description": "A-S-E portfolio website",
+    "lang": "en-US",
+    "name": "A-S-E portfolio",
+    "short_name": "A-S-E",
     "theme_color": "#731e1c",
-    "background_color": "#fd9a00",
+    "background_color": "#731e1c",
     "icons": [
         {
             "purpose": "maskable",
             "sizes": "512x512",
-            "src": "icon512_maskable.png",
+            "src": "icon512_rounded.png",
             "type": "image/png"
         },
         {
@@ -14,11 +21,5 @@
             "src": "icon512_rounded.png",
             "type": "image/png"
         }
-    ],
-    "orientation": "any",
-    "display": "standalone",
-    "dir": "auto",
-    "lang": "en-US",
-    "name": "A-S-E portfolio",
-    "short_name": "A-S-E"
+    ]
 }

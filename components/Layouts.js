@@ -19,12 +19,18 @@ const audiowide = Audiowide({
 import Navbar from './Navbar';
 import Header from './Header';
 import Preloader from './Preloader';
+import TopLeftImg from './TopLeftISvg';
+import Circles from './Circles';
+import BackgroundEffect from './Background';
 const Layouts = ({children}) => {
     return (
         <div>
             <Navbar />
             <Header />
             <Preloader />
+            <TopLeftImg />
+            <Circles />
+            <BackgroundEffect />
                 {children}
         </div>
         

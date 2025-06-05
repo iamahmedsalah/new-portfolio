@@ -1,34 +1,230 @@
 @import "tailwindcss";
 
 @theme {
-  --font-family-josefin: var(--font-josefin-sans), sans-serif;
-  --font-family-audiowide: var(--font-audiowide), cursive;
   --animate-spin-slow: spin 6s linear infinite;
 }
 
 @plugin "daisyui" {
-    themes: light --default, dark --prefersdark;
+  themes: light --default, dark --prefersdark;
 }
+
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-    --color-base-100:#731e1c;
-    --color-base-300:#612729;
-    --color-primary:#bbbbbf ;
-    --color-secondary:#fff ;
-    --color-accent:#fd9a00;
-    --primary-content:#393A47 ;
-    --color-info:#bbbbbf  ;
+  --color-base-100: #731e1c;
+  --color-base-300: #612729;
+  --color-primary: #bbbbbf;
+  --color-secondary: #fff;
+  --color-accent: #fd9a00;
+  --primary-content: #393A47;
+  --color-base-content:#612729;
+  --color-info: #bbbbbf;
 }
 
 @plugin "daisyui/theme" {
   name: "dark";
   default: false;
-    --color-base-100:#09090b;
-    --color-primary:#fff ;
-    --color-secondary:#fff ;
-    --color-accent:#fff;
-    --primary-content:#0DE3F41A ;
-    --color-info:#fd9a00 ;
+  --color-base-100: #09090b;
+  --color-primary: #fff;
+  --color-secondary: #fff;
+  --color-accent: #fff;
+  --primary-content: #0DE3F41A;
+  --color-info: #fd9a00;
 }
 
+
+/* Orbital rings */
+.orbital {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  opacity: 0.2;
+}
+
+.orbital-1 {
+  width: 60vw;
+  height: 60vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  border-top-color: #fd9a00;
+  border-bottom-color: #fd9a00;
+  animation: orbit 40s linear infinite;
+}
+
+.orbital-2 {
+  width: 80vw;
+  height: 40vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-left-color: #fd9a00;
+  border-right-color: #fd9a00;
+  animation: orbit-reverse 30s linear infinite;
+}
+
+.orbital-3 {
+  width: 30vw;
+  height: 30vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(70deg);
+  border-top-color: #fd9a00;
+  border-right-color: #fd9a00;
+  animation: orbit 20s linear infinite;
+}
+
+/* Glowing orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  background: #fd9a00;
+  filter: blur(20px);
+}
+
+.orb-1 {
+  width: 15vw;
+  height: 15vw;
+  top: 20%;
+  right: 15%;
+  opacity: 0.15;
+  animation: pulse 8s ease-in-out infinite alternate;
+}
+
+.orb-2 {
+  width: 20vw;
+  height: 20vw;
+  bottom: 15%;
+  left: 10%;
+  opacity: 0.2;
+  background: linear-gradient(135deg, #fd9a00, #731e1c);
+  animation: pulse 12s ease-in-out infinite alternate-reverse;
+}
+
+.orb-3 {
+  width: 8vw;
+  height: 8vw;
+  top: 35%;
+  left: 30%;
+  opacity: 0.1;
+  animation: pulse 10s ease-in-out infinite alternate;
+}
+
+.orb-4 {
+  width: 12vw;
+  height: 12vw;
+  bottom: 30%;
+  right: 20%;
+  opacity: 0.15;
+  background: linear-gradient(225deg, #fd9a00, #612729);
+  animation: pulse 9s ease-in-out infinite alternate-reverse;
+}
+
+/* Light beams */
+.beam {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, #fd9a00, transparent);
+  opacity: 0.05;
+  transform-origin: center;
+}
+
+.beam-1 {
+  width: 150vw;
+  height: 10vh;
+  top: 30%;
+  left: -25%;
+  transform: rotate(15deg);
+  animation: beam-fade 10s ease-in-out infinite alternate;
+}
+
+.beam-2 {
+  width: 100vw;
+  height: 5vh;
+  bottom: 25%;
+  right: -10%;
+  transform: rotate(-20deg);
+  animation: beam-fade 8s ease-in-out infinite alternate-reverse;
+}
+
+/* Particles */
+.particles {
+  position: absolute;
+  inset: 0;
+}
+
+.particle {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: #fd9a00;
+  top: var(--top);
+  left: var(--left);
+  opacity: 0.4;
+  animation: particle-fade 5s ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+}
+
+/* Animations */
+@keyframes orbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbit-reverse {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: scale(0.95);
+    opacity: 0.15;
+  }
+}
+
+@keyframes beam-fade {
+  0% {
+    opacity: 0.03;
+  }
+
+  50% {
+    opacity: 0.08;
+  }
+
+  100% {
+    opacity: 0.04;
+  }
+}
+
+@keyframes particle-fade {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 0.6;
+  }
+}

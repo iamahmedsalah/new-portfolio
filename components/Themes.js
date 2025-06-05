@@ -105,6 +105,7 @@ const Themes = () => {
       >
         {theme === 'light' ? <SunIcon /> : <MoonIcon />}
       </motion.button>
+      
     </motion.div>
   );
 };
