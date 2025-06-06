@@ -11,9 +11,9 @@ import { staggerContainer, container } from '../variants'
 
 export const navbarLinks = [
     { name: 'about', path: '/about', icon: <HiUser /> },
-    { name: 'skills', path: '/skills', icon: <HiRectangleGroup /> },
+    { name: 'skills', path: '/skills', icon: <HiViewColumns /> },
     { path: '/', icon: <Image priority={true} src={Logo} alt='A logo' className='animate-spin-slow' width={70} height={70} /> },
-    { name: 'projects', path: '/projects', icon: <HiViewColumns /> },
+    { name: 'projects', path: '/projects', icon: <HiRectangleGroup /> },
     {name: 'contact', path: '/contact', icon: <HiEnvelope />,},
 
 ]

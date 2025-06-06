@@ -59,7 +59,7 @@ const Preloader = ({ onComplete}) => {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm">
+                    className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-[3px] ">
                     <div className=" flex flex-col justify-center items-center flex-nowrap gap-4">
                         {/* Logo with spinning border */}
                         <motion.div

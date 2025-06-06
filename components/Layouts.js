@@ -20,8 +20,8 @@ import Navbar from './Navbar';
 import Header from './Header';
 import Preloader from './Preloader';
 import TopLeftImg from './TopLeftISvg';
-import Circles from './Circles';
 import BackgroundEffect from './Background';
+import ScrollProgress from '@/components/ScrollProgress';
 const Layouts = ({children}) => {
     return (
         <div>
@@ -29,8 +29,8 @@ const Layouts = ({children}) => {
             <Header />
             <Preloader />
             <TopLeftImg />
-            <Circles />
             <BackgroundEffect />
+            <ScrollProgress />
                 {children}
         </div>
         

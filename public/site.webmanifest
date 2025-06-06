@@ -15,12 +15,12 @@
             "type": "image/png"
         }
     ],
+    "orientation": "any",
     "display": "standalone",
     "dir": "auto",
     "lang": "en-US",
     "name": "A-S-E portfolio",
     "short_name": "A-S-E",
     "start_url": "/",
-    "scope": "/",
     "description": "A-S-E portfolio website"
 }
