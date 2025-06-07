@@ -320,8 +320,8 @@ const About = () => {
                     <h3 className="text-2xl font-bold text-primary mb-4">About Me</h3>
                     <div className="space-y-4 text-primary">
                       <p>
-                        Hello! I'm Ahmed, a passionate frontend developer with expertise in building modern,
-                        responsive web applications. My journey in web development started in 2019, and I've
+                        Hello! I&apos;m Ahmed, a passionate frontend developer with expertise in building modern,
+                        responsive web applications. My journey in web development started in 2019, and I&apos;ve
                         been constantly learning and improving my skills since then.
                       </p>
                       <p>
@@ -329,7 +329,7 @@ const About = () => {
                         clean, efficient, and user-friendly interfaces that provide exceptional user experiences.
                       </p>
                       <p>
-                        When I'm not coding, you can find me exploring new technologies, contributing to open-source
+                        When I&apos;m not coding, you can find me exploring new technologies, contributing to open-source
                         projects, or sharing my knowledge through technical articles and tutorials.
                       </p>
                     </div>

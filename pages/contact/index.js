@@ -83,7 +83,7 @@ const Contact = () => {
             Get in <span className='text-accent mx-1 animate-pulse'>Touch.</span>
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Have a project in mind or just want to say hello? I'd love to hear from you.
+            Have a project in mind or just want to say hello? I&apos;d love to hear from you.
             Fill out the form below or reach out through my social media.
           </p>
         </motion.div>
@@ -111,7 +111,7 @@ const Contact = () => {
                 </motion.div>
                 <h3 className="text-2xl font-bold text-primary mb-4">Message Sent!</h3>
                 <p className="text-gray-400">
-                  Thank you for reaching out. I'll get back to you as soon as possible.
+                  Thank you for reaching out. I&apos;ll get back to you as soon as possible.
                 </p>
               </motion.div>
             ) : (
@@ -217,7 +217,7 @@ const Contact = () => {
               variants={itemVariants}
               className="text-gray-400 mb-8"
             >
-              I'm currently available for freelance work, collaborations, and interesting projects.
+              I&apos;m currently available for freelance work, collaborations, and interesting projects.
               Feel free to reach out through any of these platforms:
             </motion.p>
             
