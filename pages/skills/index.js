@@ -7,8 +7,10 @@ import {
 import {
   SiNextdotjs, SiTailwindcss, SiTypescript,
   SiFirebase, SiMongodb, SiGraphql, SiRedux, SiFramer,
-  SiVite, SiVercel, SiExpress
+  SiVite, SiVercel, SiExpress ,SiGithubcopilot
 } from 'react-icons/si';
+import { TbBrandVscode } from "react-icons/tb";
+
 
 // Skill categories with icons and proficiency levels
 const skillsData = [
@@ -33,8 +35,8 @@ const skillsData = [
     category: "Backend",
     skills: [
       { name: "Node.js", icon: FaNodeJs, color: "#339933", level: 80 },
-      { name: "MongoDB", icon: SiMongodb, color: "#47A248", level: 55 },
-      { name: "SQL", icon: FaDatabase, color: "#00758F", level: 75 },
+      { name: "MongoDB", icon: SiMongodb, color: "#47A248", level: 75 },
+      { name: "SQL", icon: FaDatabase, color: "#00758F", level: 55 },
       { name: "Express", icon: SiExpress, color: "#fff", level: 75 },
       // { name: "Firebase", icon: SiFirebase, color: "#FFCA28", level: 85 },
       // { name: "GraphQL", icon: SiGraphql, color: "#E10098", level: 70 },
@@ -44,7 +46,9 @@ const skillsData = [
     category: "Tools",
     skills: [
       { name: "Git & GitHub", icon: FaGithub, color: "#fff", level: 90 },
+      { name: "GitHub Copilot", icon: SiGithubcopilot, color: "#CC6699", level: 90 },
       { name: "npm", icon: FaNpm, color: "#CB3837", level: 92 },
+      { name: "Vs Code", icon: TbBrandVscode, color: "#1572B6", level: 92 },
       { name: "Figma", icon: FaFigma, color: "#F24E1E", level: 85 },
       { name: "Vercel", icon: SiVercel, color: "#fff", level: 88 },
     ]
@@ -99,9 +103,10 @@ const Skills = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-3xl md:text-4xl font-bold text-center text-primary mb-8"
+          className="text-3xl md:text-4xl font-bold text-center text-primary mb-8 "
         >
-          Technical Skills
+          Technical
+          <span className='text-accent mx-1 animate-pulse'>Skills.</span> 
         </motion.h2>
 
         {/* Category tabs */}
@@ -115,7 +120,7 @@ const Skills = () => {
             <motion.button
               key={category.category}
               onClick={() => setActiveCategory(category.category)}
-              className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 cursor-pointer shadow-md ${activeCategory === category.category
+              className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm transition-all duration-300 cursor-pointer shadow-md ${activeCategory === category.category
                 ? "bg-accent text-base-100 shadow-lg"
                 : "bg-base-300 text-primary hover:bg-accent/30 hover:text-white/70  hover:shadow-lg"
                 }`}

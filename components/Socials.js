@@ -41,7 +41,7 @@ const Socials = () => {
         </motion.li>
         <motion.li variants={staggerContainer}>
           <Link
-            href={""}
+            href={"https://www.hackerrank.com/iamahmedslahios/hackos"}
             className="w-5 text-2xl hover:text-green-700 "
           >
             <TbBrandHackerrank className="hover:scale-125 duration-200" />
