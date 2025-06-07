@@ -1,40 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaPaperPlane } from 'react-icons/fa';
 
 
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
-    }
-  }
-};
+// Animation variant
+import {containerVariants ,itemVariants} from '../../variants'
 
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { type: "spring", stiffness: 100 }
-  }
-};
-
-const floatingVariants = {
-  initial: { y: 0 },
-  animate: { 
-    y: [0, -10, 0],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
-};
 
 const socialLinks = [
   { name: 'Email', icon: FaEnvelope, url: 'mailto:iamahmedslahios@gmail.com', color: '#EA4335' },
@@ -108,7 +79,7 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-info mb-4">
             Get in <span className='text-accent mx-1 animate-pulse'>Touch.</span>
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">

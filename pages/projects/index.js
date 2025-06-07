@@ -9,6 +9,9 @@ import {
   SiVercel
 } from 'react-icons/si';
 
+
+import {containerVariants ,cardVariants } from '../../variants'
+
 // Project data with categories
 const projectsData = [
   {
@@ -80,29 +83,6 @@ const Projects = () => {
     ? projectsData
     : projectsData.filter(project => project.category === activeTab);
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      }
-    }
-  };
-
-  const cardVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15
-      }
-    }
-  };
 
   return (
     <section className="py-16 px-4">
@@ -111,7 +91,7 @@ const Projects = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-primary"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-info"
         >
           My <span className='text-accent mx-1 animate-pulse'>Projects.</span>
         </motion.h1>
