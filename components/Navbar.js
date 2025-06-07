@@ -27,11 +27,13 @@ const Navbar = () => {
             variants={container}
             initial="hidden"
             animate="show"
-            className='flex flex-col items-center xl:justify-center gap-y-4 fixed h-max 
-        bottom-0 mt-auto  xl:right-[2%] z-50 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen '>
+            className='fixed bottom-0 w-full z-50 
+            xl:bottom-auto xl:right-[2%] xl:top-0 xl:w-16 xl:max-w-md xl:h-screen 
+            xl:flex xl:flex-col xl:items-center xl:justify-center xl:gap-y-4 '>
             {/* inner */}
-            <motion.ul className='flex items-center text-primary w-full xl:flex-col justify-between xl:justfiy-center gap-y-10 px-4 
-    md:px-40 xl:px-0 h-[80px] xl:h-max py-8 text-3xl xl:text-xl xl:rounded-full bg-base-300 shadow-xl '>
+            <motion.ul className='flex items-center justify-between w-full h-[80px] px-4 md:px-40 text-primary text-3xl
+                bg-base-300/85 backdrop-blur-xs shadow-xl
+                xl:flex-col xl:justify-center xl:gap-y-10 xl:px-0 xl:h-max xl:py-8 xl:text-xl xl:rounded-full '>
                 {navbarLinks.map((link, index) => {
                     return <motion.li
                         key={index}
