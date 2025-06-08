@@ -111,7 +111,7 @@ const Contact = () => {
                 </motion.div>
                 <h3 className="text-2xl font-bold text-primary mb-4">Message Sent!</h3>
                 <p className="text-gray-400">
-                  Thank you for reaching out. I'll get back to you as soon as possible, typically within 24-48 hours.
+                  Thank you for reaching out. I&apos;ll get back to you as soon as possible, typically within 24-48 hours.
                 </p>
               </motion.div>
             ) : (
