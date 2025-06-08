@@ -17,9 +17,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
-    message: '',
-    honeypot: '' // Honeypot field for spam prevention
+    message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -38,33 +36,35 @@ const Contact = () => {
     setIsSubmitting(true);
     setFormError('');
 
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setFormError('Please fill out all fields');
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setFormError('Please enter a valid email address');
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      // Send form data to API
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      
-      const data = await response.json();
-      
-      // Check if the request was successful
-      if (!response.ok) {
-        throw new Error(data.error || 'Something went wrong');
-      }
+      // Simulate form submission (e.g., API call)
+      await new Promise(resolve => setTimeout(resolve, 1500));
       
       // Success
       setIsSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '', honeypot: '' });
+      setFormData({ name: '', email: '', message: '' });
       
       // Reset after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false);
       }, 3000);
     } catch (error) {
-      setFormError(error.message || 'Something went wrong. Please try again later.');
+      setFormError('Something went wrong. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
@@ -111,7 +111,7 @@ const Contact = () => {
                 </motion.div>
                 <h3 className="text-2xl font-bold text-primary mb-4">Message Sent!</h3>
                 <p className="text-gray-400">
-                  Thank you for reaching out. I&apos;ll get back to you as soon as possible, typically within 24-48 hours.
+                  Thank you for reaching out. I&apos;ll get back to you as soon as possible.
                 </p>
               </motion.div>
             ) : (
@@ -129,12 +129,7 @@ const Contact = () => {
                     animate={{ opacity: 1, x: 0 }}
                     className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-red-500"
                   >
-                    <div className="flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                      </svg>
-                      {formError}
-                    </div>
+                    {formError}
                   </motion.div>
                 )}
                 
@@ -167,19 +162,6 @@ const Contact = () => {
                 </motion.div>
                 
                 <motion.div variants={itemVariants} className="mb-6">
-                  <label htmlFor="subject" className="block text-primary mb-2">Subject (Optional)</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="What's this about?"
-                    className="w-full p-3 text-primary bg-transparent outline-2 outline-accent/50 border border-base-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
-                  />
-                </motion.div>
-                
-                <motion.div variants={itemVariants} className="mb-6">
                   <label htmlFor="message" className="block text-primary mb-2">Message</label>
                   <textarea
                     id="message"
@@ -193,17 +175,6 @@ const Contact = () => {
                   ></textarea>
                 </motion.div>
                 
-                {/* honeypot field to catch bots */}
-                <input
-                  type="text"
-                  name="honeypot"
-                  value={formData.honeypot}
-                  onChange={handleChange}
-                  style={{ display: 'none' }}
-                  tabIndex="-1"
-                  autoComplete="off"
-                />
-                
                 <motion.button
                   variants={itemVariants}
                   whileHover={{ scale: 1.03 }}
@@ -214,7 +185,7 @@ const Contact = () => {
                 >
                   {isSubmitting ? (
                     <>
-                      <svg className="animate-spin h-5 w-5 text-base=-100" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <svg className="animate-spin h-5 w-5 text-base=-100" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
