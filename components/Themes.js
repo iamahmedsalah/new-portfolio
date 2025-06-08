@@ -94,7 +94,7 @@ const Themes = () => {
     >
       <motion.button
         whileTap={{ scale: 0.9 }}
-        className={`flex items-center justify-center w-[50px] h-[50px] rounded-full bg-base-300 ${
+        className={`flex items-center justify-center w-[50px] h-[50px] rounded-full bg-base-300  z-10 ${
           theme === 'light' 
             ? 'hover:bg-yellow-400/20 hover:animate-spin-slow' 
             : 'hover:bg-blue-400/10'
