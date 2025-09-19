@@ -52,11 +52,15 @@ export default function Home() {
         </div>
 
         {/* Right Side */}
-         <Iconmition/>
+        <Iconmition/>
       </div>
 
       {/* My Avatar */}
       <motion.div
+        variants={fadeIn('up', 0.3)}
+        initial='hidden'
+        animate='show'
+        exit='hidden'
         className='absolute bottom-20 left-0 right-0 xl:bottom-0 transition-all duration-150 ease-in-out'>
         <Avatar />
       </motion.div>
