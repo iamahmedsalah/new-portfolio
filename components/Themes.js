@@ -5,7 +5,7 @@ import { container } from '../variants';
 
 const SunIcon = () => (
   <svg
-    className="w-6 h-6 text-yellow-400 animate-pulse"
+    className="w-6 h-6 text-accent animate-pulse"
     fill="none"
     stroke="currentColor"
     strokeWidth={2}

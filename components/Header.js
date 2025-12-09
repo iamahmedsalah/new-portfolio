@@ -6,9 +6,9 @@ import Themes from './Themes';
 
 const Header = () => {
     return (
-        <header className='flex flex-row justify-around items-center flex-nowrap gap-4 pt-7'>
-            {/* Themes */}
+        <header className='flex flex-row justify-around items-center flex-nowrap gap-2 pt-5 '>
             <div>
+            {/* Themes */}
                 <Themes />
             </div>
             {/* Socials */}

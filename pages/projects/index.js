@@ -143,10 +143,13 @@ const Projects = () => {
                 layout
                 onHoverStart={() => setHoveredProject(project.id)}
                 onHoverEnd={() => setHoveredProject(null)}
-                className="bg-base-300 rounded-xl overflow-hidden shadow-lg group relative "
+                className="bg-base-300 rounded-xl overflow-hidden shadow-lg group relative"
               >
                 {/* Project Image */}
-                <div className="h-48 overflow-hidden">
+                <div 
+                  className="h-48 overflow-hidden cursor-pointer"
+                  onClick={() => setHoveredProject(hoveredProject === project.id ? null : project.id)}
+                >
                   <motion.div
                     className="w-full h-full bg-gray-800"
                     style={{
@@ -182,10 +185,30 @@ const Projects = () => {
 
                   {/* Hover Action Buttons */}
                   <motion.div
-                    className={`absolute inset-0 bg-base-100/50 backdrop-blur-sm flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                    className="absolute inset-0 bg-base-100/50 backdrop-blur-sm flex flex-col items-center justify-center"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: hoveredProject === project.id ? 1 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    style={{ pointerEvents: hoveredProject === project.id ? 'auto' : 'none' }}
                   >
+                    {/* Close button for mobile */}
+                    {hoveredProject === project.id && (
+                      <motion.button
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.2 }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setHoveredProject(null);
+                        }}
+                        className="absolute top-4 right-4 bg-base-300/80 text-primary p-2 rounded-full md:hidden hover:bg-accent/80 transition-colors"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </motion.button>
+                    )}
+
                     {/* Animated tech icons wrapper */}
                     <div className="relative w-24 h-24 mb-12 animate-spin-slow">
                       <AnimatePresence>
